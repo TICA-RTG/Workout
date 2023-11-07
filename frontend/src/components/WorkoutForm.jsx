@@ -16,7 +16,7 @@ const WorkoutForm = ()=> {
    const handleSubmit = async (e)=>{
     e.preventDefault()
     const workout = {title, load, reps}
-    const response = await fetch('/api/workouts' , {
+    const response = await fetch('https://workout-app-ekit.onrender.com/api/workouts' , {
         method : 'POST',
         headers: {"content-Type" : "application/json"},
         body: JSON.stringify(workout)
@@ -37,7 +37,7 @@ const WorkoutForm = ()=> {
             dispatch({type: 'CREATE_WORKOUT', payload: data})
             setAdded('Succes')
             setTimeout(()=>{
-                setIspending(false) 
+                setIspending(false)
             }, 1200)
             
             
