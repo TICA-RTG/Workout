@@ -16,8 +16,6 @@ app.use((req,res, next)=>{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     console.log(req.path, req.method)
-    res.json({mssg: "welcome"})
-    console.log('testing')
     next()
 })
 
