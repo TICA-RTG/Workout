@@ -18,6 +18,7 @@ useEffect(()=> {
         }
 
         console.log(data)
+        
     }
 
     URL()
@@ -32,8 +33,10 @@ useEffect(()=> {
                 <WorkoutDetails key={workout._id} workout={workout}/>
                 )) }
             </div>
+            <div>
+             <WorkoutForm/>
+            </div>
             
-            <WorkoutForm/>
         </div>
         
     )
