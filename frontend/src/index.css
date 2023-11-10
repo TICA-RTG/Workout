@@ -39,12 +39,14 @@ header a {
 }
 .workouts{
   width: 55%;
+  padding-top: 30px;
 }
 
 .workout-details {
   background-color: white;
   width: 100%;
   border-left:10px solid #2adfac;
+  padding: 10px;
   border-radius: 7px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.20);
   position: relative;
@@ -71,7 +73,7 @@ header a {
 }
 
 .workout-form {
-  /* padding: 20px; */
+  padding: 20px;
   width: 300px;
 }
 form {
@@ -149,7 +151,7 @@ div.error {
   }
 
  .nav-bar{
-  background-color: rgb(167, 75, 75);
+  background-color: white;
   padding: 0px;
 }
  .workouts {
