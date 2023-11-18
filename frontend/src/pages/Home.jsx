@@ -10,7 +10,7 @@ const Home = ()=>{
 
 useEffect(()=> {
     const URL = async () => {
-        const response = await fetch('https://workout-app-ekit.onrender.com/api/workouts')
+        const response = await fetch('https://workout-app-ekit.onrender.com/workouts')
         const data = await response.json()
 
         if (response.ok) {

@@ -16,7 +16,7 @@ const WorkoutForm = ()=> {
    const handleSubmit = async (e)=>{
     e.preventDefault()
     const workout = {title, load, reps}
-    const response = await fetch('https://workout-app-ekit.onrender.com/api/workouts' , {
+    const response = await fetch('https://workout-app-ekit.onrender.com/workouts' , {
         method : 'POST',
         headers: {"content-Type" : "application/json"},
         body: JSON.stringify(workout)

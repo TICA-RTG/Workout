@@ -6,7 +6,7 @@ const WorkoutDetails = ({ workout })=> {
     const { dispatch } = useWorkoutcontext()
 
     const handleDelete = async ()=> {
-        const response = await fetch('https://workout-app-ekit.onrender.com/api/workouts/' + workout._id, {
+        const response = await fetch('https://workout-app-ekit.onrender.com/workouts/' + workout._id, {
             method: 'DELETE'
         })
         const data = await response.json()
