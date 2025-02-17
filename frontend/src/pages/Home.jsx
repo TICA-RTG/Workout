@@ -13,7 +13,7 @@ const Home = ()=>{
 useEffect(()=> {
     const URL = async () => {
         // const response = await fetch('https://workout-app-ekit.onrender.com/workouts')
-        const response = await fetch("/api/workouts", {
+        const response = await fetch("https://workout-app-ekit.onrender.com/workouts", {
             headers: {
                 'Authorization': `Bearer ${user.token}`
             }

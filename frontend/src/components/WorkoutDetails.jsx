@@ -14,7 +14,7 @@ const WorkoutDetails = ({ workout })=> {
             console.log('you cannot delete foko')
             return
         }
-        const response = await fetch('/api/workouts/' + workout._id, {
+        const response = await fetch('https://workout-app-ekit.onrender.com/workouts/' + workout._id, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${user.token}`
