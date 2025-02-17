@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useWorkoutcontext } from '../hooks/useWorkoutContext'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 
 const WorkoutForm = ()=> {
+    const { user } = useAuthContext()
 
     const { dispatch } = useWorkoutcontext()
     const [title, setTitle] = useState('')
@@ -13,18 +15,27 @@ const WorkoutForm = ()=> {
     const [ispending, setIspending] = useState(true)
     const [emptyFields, setEmptyFields] = useState([])
 
+    // 'https://workout-app-ekit.onrender.com/workouts'
+
    const handleSubmit = async (e)=>{
     e.preventDefault()
+    if (!user) {
+        setError('Please login to add a workout')
+        return
+    }
     const workout = {title, load, reps}
-    const response = await fetch('https://workout-app-ekit.onrender.com/workouts' , {
+    const response = await fetch("/api/workouts" , {
         method : 'POST',
-        headers: {"content-Type" : "application/json"},
+        headers: {"content-Type" : "application/json",
+            "Authorization" : `Bearer ${user.token}`
+        },
         body: JSON.stringify(workout)
     })
         const data = await response.json()
 
         if (!response.ok) {
             setError(data.error)
+            console.log('ibi like some error dey here')
             setEmptyFields(data.emptyFields)
         }
         if (response.ok) {
@@ -43,6 +54,8 @@ const WorkoutForm = ()=> {
             
         }
    }
+
+   console.log(ispending)
 
     return (
         <div className='workout-form'>

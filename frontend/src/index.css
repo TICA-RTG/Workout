@@ -10,6 +10,7 @@
 h1{
   font-family:'Courier New', Courier, monospace;
   color: black;
+  padding-left: 30px;
 }
 h4{
   color: var(--primary);
@@ -21,17 +22,43 @@ body {
 }
 header {
   background: #fff;
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px solid #1aac83; */
+  /* padding-left: 30px; */
 }
-header .nav-bar {
-  margin: 0 auto;
-  padding-left: 20px;
+.nav-bar {
+  padding-left: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* border: 2px solid blue; */
 }
+
 header a {
   color: #333;
   text-decoration: none;
+}
+ul li{
+  /* background-color: red; */
+  list-style-type: none;
+  /* color: green; */
+  cursor: pointer;
+  /* border: 1px solid red; */
+}
+.menuss {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+  padding: 0%;
+}
+.menu-box {
+  /* border: 2px solid green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 60px;
 }
 .pages{
   max-width: 1400px;
@@ -88,6 +115,16 @@ input::placeholder{
   font-size: 15px;
 }
 
+.enter {
+  padding: 30px;
+  width: 300px;
+  margin: auto;
+  margin-top: 100px;
+  border: 2px solid rgb(226, 221, 221);
+  border-radius: 10px;
+  background: white;
+}
+
 input {
   border: 1px solid rgb(230, 227, 227);
   border-radius:5px ;
@@ -107,6 +144,7 @@ color:var(--error)
 }
 
 .submit {
+  display: flex;
   background-color: var(--primary);
   border: none;
   color: white;
@@ -115,7 +153,22 @@ color:var(--error)
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 2px 2px 3px #6d6b6b;
+  justify-self: center;
 }
+
+.click {
+  display: flex;
+  background-color: white;
+  border: none;
+  /* border: 1px solid var(--primary); */
+  color: var(--primary);
+  padding: 10px;
+  font-family: 'poppins';
+  cursor: pointer;
+  /* box-shadow: 2px 2px 3px #6d6b6b; */
+  justify-self: center;
+}
+
 .submit:active {
   /* background-color: #57d6b2; */
   box-shadow: 1px 1px 2px #979696;
@@ -149,7 +202,15 @@ div.error {
   .home {
     width: 100%;
   }
+.big-nav {
+  display: block;
+}
+.menu-box {
+  padding: 0px;
+  margin:auto;
 
+  /* background: #000; */
+}
  .nav-bar{
   background-color: white;
   padding: 0px;

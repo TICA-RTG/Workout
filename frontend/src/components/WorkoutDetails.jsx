@@ -1,13 +1,24 @@
 import { useWorkoutcontext } from "../hooks/useWorkoutContext"
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { useAuthContext } from "../hooks/useAuthContext"
+
+// 'https://workout-app-ekit.onrender.com/workouts/'
 
 const WorkoutDetails = ({ workout })=> {
+    const { user } = useAuthContext()
 
     const { dispatch } = useWorkoutcontext()
 
     const handleDelete = async ()=> {
-        const response = await fetch('https://workout-app-ekit.onrender.com/workouts/' + workout._id, {
-            method: 'DELETE'
+        if (!user) {
+            console.log('you cannot delete foko')
+            return
+        }
+        const response = await fetch('/api/workouts/' + workout._id, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+                }
         })
         const data = await response.json()
          
