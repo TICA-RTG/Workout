@@ -31,11 +31,11 @@ app.use((req,res, next)=>{
 })
 
 //routes
-// app.use('/workouts', workoutRoutes)
+app.use('/workouts', workoutRoutes)
 app.use('/user' , userRoutes)
-app.get('/workouts', (req, res) => {
-  res.json({mssg:'working'})
-})
+// app.get('/workouts', (req, res) => {
+//   res.json({mssg:'working'})
+// })
 
 //connect to db
 // this connection be for going live
