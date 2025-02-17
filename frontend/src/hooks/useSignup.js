@@ -11,7 +11,7 @@ export const useSignup = () => {
         setIsPending(true);
         setError(null);
 
-            const response = await fetch('/api/user/signup', {
+            const response = await fetch('https://workout-app-ekit.onrender.com/user/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password, confirmPassword })
