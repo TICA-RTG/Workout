@@ -1,0 +1,4 @@
+[build]
+  publish = "frontend/build" # Or "frontend/dist" or whatever your build output directory is
+  command = "npm run build" # Or "yarn build" or whatever your build command is for the frontend
+  
