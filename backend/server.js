@@ -31,8 +31,8 @@ app.use((req,res, next)=>{
 })
 
 //routes
-app.use('/api/workouts', workoutRoutes)
-app.use('/api/user' , userRoutes)
+app.use('/workouts', workoutRoutes)
+app.use('/user' , userRoutes)
 // app.get('api/workouts', (req, res) => {
 //   res.json({mssg:'working'})
 // })
