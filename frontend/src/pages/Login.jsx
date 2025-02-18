@@ -9,7 +9,6 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await login(email, password)
-        console.log(email, password)
     }
 
     return (
@@ -30,7 +29,8 @@ const Login = () => {
                     placeholder='Enter password'/>
             </label>
 
-            <button disabled={isPending} className='submit'>Login</button>
+            {isPending ? <p className='click'>Signing In...</p> :<button disabled={isPending} className='submit'>Login</button>}
+            {/* <button disabled={isPending} className='submit'>Login</button> */}
             {error && <div className='error'>{error}</div>}
         </form>
     )

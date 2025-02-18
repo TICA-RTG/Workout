@@ -56,7 +56,8 @@ const Signup = () => {
                     placeholder='Retype password'/>
             </label>
 
-            <button disabled={isPending} className='submit'>Sign up</button>
+            {isPending ? <p className='click'>Signing Up...</p> :<button disabled={isPending} className='submit'>Sign Up</button>}
+            {/* <button disabled={isPending} className='submit'>Sign up</button> */}
             {error && <div className="error">{error}</div>}
         </form>
     )
