@@ -29,6 +29,7 @@ const Signup = () => {
     //   };
 
     return (
+        <div>
         <form onSubmit={handleSubmit} className='enter'>
             <h3>Signup</h3>
             <label>Email:
@@ -60,6 +61,8 @@ const Signup = () => {
             {/* <button disabled={isPending} className='submit'>Sign up</button> */}
             {error && <div className="error">{error}</div>}
         </form>
+        <p className='middle'>NB: Initial Signup/Login may take some time.</p>
+        </div>
     )
 }
 

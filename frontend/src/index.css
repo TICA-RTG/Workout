@@ -143,6 +143,11 @@ color:var(--error)
 
 }
 
+.middle {
+  display: flex;
+  justify-content: center;
+}
+
 .submit {
   display: flex;
   background-color: var(--primary);

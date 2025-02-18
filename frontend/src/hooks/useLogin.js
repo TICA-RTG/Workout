@@ -8,6 +8,7 @@ export const useLogin = () => {
 
 
     const login = async (email, password) => {
+        try {
         setIsPending(true);
         setError(null);
 
@@ -32,6 +33,10 @@ export const useLogin = () => {
                     setIsPending(false);
                     setError(null);
                     }
+                } catch (error) {
+                    setIsPending(false)
+                    setError('Check connection. Failed to login')
+                }
                    
                 }
                 return { login, isPending, error}

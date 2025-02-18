@@ -28,7 +28,7 @@ try {
     next()
 
 } catch(error) {
-    console.error("Authentication error:", error);
+    // console.error("Authentication error:", error);
     res.status(401).json({error: 'Request is not authorized'})
 }
 }

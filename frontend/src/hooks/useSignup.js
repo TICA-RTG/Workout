@@ -8,6 +8,7 @@ export const useSignup = () => {
 
 
     const signup = async (email, password, confirmPassword) => {
+        try {
         setIsPending(true);
         setError(null);
 
@@ -20,7 +21,7 @@ export const useSignup = () => {
                 if (!response.ok) {
                     setIsPending(false)
                     setError(data.error)
-                    console.log(email, password, confirmPassword, 'kpikpisu')
+                    // console.log(email, 'kpikpisu')
                     }
 
                     if(response.ok) {
@@ -29,12 +30,15 @@ export const useSignup = () => {
 
                     // update the Auth Context
                     dispatch({ type: 'LOGIN', payload: data });
-                    console.log(data, 'eja agben3')
+                    // console.log(data, 'eja agben3')
                     setIsPending(false);
                     setError(null);
                     }
-                   
+                } catch (error) {
+                    setIsPending(false)
+                    setError('Check connection. Failed to signup')
                 }
+             }
                 return { signup, isPending, error}
 
 }
