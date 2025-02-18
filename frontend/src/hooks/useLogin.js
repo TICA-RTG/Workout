@@ -20,7 +20,6 @@ export const useLogin = () => {
                 if (!response.ok) {
                     setIsPending(false)
                     setError(data.error)
-                    console.log(email, password)
                     }
 
                     if(response.ok) {
@@ -29,7 +28,7 @@ export const useLogin = () => {
 
                     // update the Auth Context
                     dispatch({ type: 'LOGIN', payload: data });
-                    console.log(data)
+                    // console.log(data)
                     setIsPending(false);
                     setError(null);
                     }

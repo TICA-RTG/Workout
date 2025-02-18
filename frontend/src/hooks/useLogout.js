@@ -14,8 +14,6 @@ export const useLogout = () => {
         dispatch({type: 'LOGOUT'})
         dispatchWorkout({type: 'SET_WORKOUTS', payload: null})
 
-        //test button
-        console.log('logout button clicked')
     }
 
     return {logout}
